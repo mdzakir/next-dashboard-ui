@@ -1,3 +1,250 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.react-calendar {
+  width: 100% !important;
+  border: none !important;
+  font-family: Inter, sans-serif !important;
+}
+
+.react-calendar__tile--active {
+  background-color: #c3ebfa !important;
+  color: black !important;
+}
+
+.react-calendar__navigation__label__labelText {
+  font-weight: 600 !important;
+}
+
+.rbc-btn-group:first-child {
+  display: none !important;
+}
+
+.rbc-toolbar-label {
+  font-weight: 600 !important;
+  text-align: right !important;
+  padding: 0 1rem !important;
+}
+
+.rbc-btn-group:last-child {
+  font-size: 13px !important;
+}
+
+.rbc-btn-group button {
+  border: none !important;
+  background-color: #f1f0ff !important;
+  margin-left: 2px !important;
+  outline: none !important;
+}
+
+.rbc-btn-group:last-child button {
+  border: none !important;
+  background-color: #f1f0ff !important;
+  margin-left: 2px !important;
+  outline: none !important;
+}
+
+.rbc-toolbar button.rbc-active {
+  background-color: #c3ebfa !important;
+  box-shadow: none !important;
+}
+
+.rbc-time-view {
+  border-color: #e3e3e3 !important;
+}
+
+.rbc-allday-cell {
+  display: none !important;
+}
+
+.rbc-time-content {
+  border-top: none !important;
+}
+
+.rbc-time-gutter.rbc-time-column {
+  font-size: 12px !important;
+}
+
+.rbc-time-gutter.rbc-time-column .rbc-timeslot-group {
+  padding: 5px 20px 0 20px !important;
+}
+
+.rbc-day-slot {
+  font-size: 14px !important;
+}
+
+.rbc-event {
+  background-color: #c3ebfa !important;
+  border: none !important;
+  color: black !important;
+  font-size: 12px !important;
+  padding: 2px 4px !important;
+  border-radius: 4px !important;
+}
+
+.rbc-event:hover {
+  background-color: #a0d8f5 !important;
+  cursor: pointer !important;
+}
+.rbc-event-label {
+  font-weight: 600 !important;
+}
+.rbc-event-content {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  font-weight: 600 !important;
+}
+.rbc-event.rbc-selected {
+  background-color: #7cccfb !important;
+}
+.rbc-show-more {
+  font-size: 12px !important;
+  margin-top: 2px !important;
+  color: #007bff !important;
+  cursor: pointer !important;
+}
+.rbc-show-more:hover {
+  text-decoration: underline !important;
+}
+.rbc-calendar {
+  font-family: Inter, sans-serif !important;
+}
+.rbc-header {
+  font-weight: 600 !important;
+}
+.rbc-header.rbc-today {
+  background-color: #e6f7ff !important;
+}
+.rbc-day-bg.rbc-today {
+  background-color: #f0f8ff !important;
+}
+.rbc-appointment {
+  border: none !important;
+  border-radius: 4px !important;
+}
+.rbc-appointment.rbc-selected {
+  background-color: #7cccfb !important;
+}
+
+.rbc-appointment:hover {
+  background-color: #a0d8f5 !important;
+  cursor: pointer !important;
+}
+
+.rbc-appointment-label {
+  font-weight: 600 !important;
+}
+.rbc-appointment-content {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+.rbc-agenda-table tr:nth-child(even) {
+  background-color: #f9f9f9 !important;
+}
+.rbc-agenda-table th {
+  background-color: #f1f0ff !important;
+  font-weight: 600 !important;
+}
+.rbc-agenda-table td,
+.rbc-agenda-table th {
+  border: 1px solid #e3e3e3 !important;
+  padding: 8px !important;
+}
+.rbc-agenda-table td.rbc-agenda-time-cell {
+  font-size: 12px !important;
+}
+.rbc-agenda-table td.rbc-agenda-event-cell {
+  font-size: 14px !important;
+}
+
+.rbc-event:nth-child(1) {
+  background-color: #ffadad !important;
+}
+.rbc-event:nth-child(2) {
+  background-color: #ffd6a5 !important;
+}
+.rbc-event:nth-child(3) {
+  background-color: #fdffb6 !important;
+}
+
+.rbc-event:nth-child(4) {
+  background-color: #caffbf !important;
+}
+.rbc-event:nth-child(5) {
+  background-color: #9bf6ff !important;
+}
+.rbc-event:nth-child(6) {
+  background-color: #a0c4ff !important;
+}
+.rbc-event:nth-child(7) {
+  background-color: #bdb2ff !important;
+}
+.rbc-event:nth-child(8) {
+  background-color: #ffc6ff !important;
+}
+.rbc-event:nth-child(9) {
+  background-color: #fffffc !important;
+}
+.rbc-event:nth-child(1):hover {
+  background-color: #ff7b7b !important;
+}
+.rbc-event:nth-child(2):hover {
+  background-color: #ffb347 !important;
+}
+.rbc-event:nth-child(3):hover {
+  background-color: #fdfd6f !important;
+}
+.rbc-event:nth-child(4):hover {
+  background-color: #8cff7f !important;
+}
+
+.rbc-event:nth-child(5):hover {
+  background-color: #66f0ff !important;
+}
+.rbc-event:nth-child(6):hover {
+  background-color: #669bff !important;
+}
+.rbc-event:nth-child(7):hover {
+  background-color: #9d7eff !important;
+}
+.rbc-event:nth-child(8):hover {
+  background-color: #ff7bff !important;
+}
+.rbc-event:nth-child(9):hover {
+  background-color: #e0e0d1 !important;
+}
+.rbc-event:nth-child(1).rbc-selected {
+  background-color: #ff4c4c !important;
+}
+.rbc-event:nth-child(2).rbc-selected {
+  background-color: #ff9933 !important;
+}
+.rbc-event:nth-child(3).rbc-selected {
+  background-color: #f5f542 !important;
+}
+.rbc-event:nth-child(4).rbc-selected {
+  background-color: #52ff52 !important;
+}
+.rbc-event:nth-child(5).rbc-selected {
+  background-color: #33e0ff !important;
+}
+.rbc-event:nth-child(6).rbc-selected {
+  background-color: #3366ff !important;
+}
+.rbc-event:nth-child(7).rbc-selected {
+  background-color: #7a33ff !important;
+}
+.rbc-event:nth-child(8).rbc-selected {
+  background-color: #ff33ff !important;
+}
+.rbc-event:nth-child(9).rbc-selected {
+  background-color: #b3b3a6 !important;
+}
+
+.rbc-event-label,
+.rbc-appointment-label {
+  margin-bottom: 5px !important;
+}
