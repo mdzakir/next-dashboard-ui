@@ -1,35 +1,34 @@
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { role, studentsData, teachersData } from "@/lib/data";
+import { role, studentsData } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 
-type Teacher = {
+type Student = {
   id: number;
-  teacherId: string;
+  studentId: string;
   name: string;
   email?: string;
   phone: string;
   photo: string;
-  subjects: string[];
-  classes: string[];
+  grade: string;
+  class: string;
   address: string;
 };
 
 const columns = [
   { header: "Info", accessor: "info" },
   {
-    header: "Teacher ID",
-    accessor: "teacherId",
+    header: "Student ID",
+    accessor: "studentId",
     className: "hidden md:table-cell",
   },
   {
-    header: "Subjects",
-    accessor: "subjects",
+    header: "Grade",
+    accessor: "grade",
     className: "hidden md:table-cell",
   },
-  { header: "Classes", accessor: "classes", className: "hidden md:table-cell" },
   {
     header: "Phone",
     accessor: "phone",
@@ -44,7 +43,7 @@ const columns = [
 ];
 
 const StudentsListPage = () => {
-  const renderRow = (item: Teacher) => {
+  const renderRow = (item: Student) => {
     return (
       <tr
         key={item.id}
@@ -60,17 +59,14 @@ const StudentsListPage = () => {
           />
           <div className="flex flex-col">
             <h3 className="font-semibold">{item.name}</h3>
-            <p className="text-xs text-gray-500">{item.email}</p>
+            <p className="text-xs text-gray-500">{item.class}</p>
           </div>
         </td>
         <td className="p-3 text-sm text-gray-700 hidden md:table-cell">
-          {item.teacherId}
+          {item.studentId}
         </td>
         <td className="p-3 text-sm text-gray-700 hidden md:table-cell">
-          {item.subjects.join(", ")}
-        </td>
-        <td className="p-3 text-sm text-gray-700 hidden md:table-cell">
-          {item.classes.join(", ")}
+          {item.grade}
         </td>
         <td className="p-3 text-sm text-gray-700 hidden md:table-cell">
           {item.phone}
@@ -81,7 +77,7 @@ const StudentsListPage = () => {
         <td className="p-3 text-sm text-gray-700">
           <div className="flex items-center gap-2">
             <Link
-              href={`/list/teachers/${item.id}`}
+              href={`/list/students/${item.id}`}
               className="text-smsBlue-500 hover:underline"
             >
               <button className="w-7 h-7 items-center justify-center flex rounded-full bg-smsSky-200 hover:bg-smsSky-300">
@@ -102,7 +98,7 @@ const StudentsListPage = () => {
     <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
       {/* top */}
       <div className="flex items-center justify-between">
-        <h3 className="hidden md:block text-lg font-semibold">All Teachers</h3>
+        <h3 className="hidden md:block text-lg font-semibold">All Students</h3>
         {/* list */}
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch />
@@ -113,15 +109,16 @@ const StudentsListPage = () => {
             <button className="text-xs flex items-center gap-2 w-8 h-8 justify-center rounded-full bg-smsYellow-200 hover:bg-smsYellow-300">
               <Image src="/sort.png" alt="filter" width={14} height={14} />
             </button>
-            <button className="text-xs flex items-center gap-2 w-8 h-8 justify-center rounded-full bg-smsYellow-200 hover:bg-smsYellow-300">
-              <Image src="/plus.png" alt="filter" width={14} height={14} />
-            </button>
+            {role === "admin" ? (
+              <button className="text-xs flex items-center gap-2 w-8 h-8 justify-center rounded-full bg-smsYellow-200 hover:bg-smsYellow-300">
+                <Image src="/plus.png" alt="filter" width={14} height={14} />
+              </button>
+            ) : null}
           </div>
         </div>
       </div>
       {/* teachers list */}
       <Table columns={columns} renderRow={renderRow} data={studentsData} />
-      <div className="p-4 border rounded-md hover:shadow-md cursor-pointer"></div>
       {/* pagination */}
       <Pagination />
     </div>

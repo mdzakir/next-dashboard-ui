@@ -24,39 +24,9 @@ const Table = ({
                 {col.header}
               </th>
             ))}
-            {/* //{" "}
-            <th className="text-left p-3 text-sm font-semibold text-gray-700">
-              // Name //{" "}
-            </th>
-            //{" "}
-            <th className="text-left p-3 text-sm font-semibold text-gray-700">
-              // Subject //{" "}
-            </th>
-            //{" "}
-            <th className="text-left p-3 text-sm font-semibold text-gray-700">
-              // Email //{" "}
-            </th>
-            //{" "}
-            <th className="text-left p-3 text-sm font-semibold text-gray-700">
-              // Phone //{" "}
-            </th>
-            //{" "}
-            <th className="text-left p-3 text-sm font-semibold text-gray-700">
-              // Actions //{" "}
-            </th> */}
           </tr>
         </thead>
-        <tbody>
-          {/* Sample row */}
-          {data.map((item) => renderRow(item))}
-          <tr className="border-b hover:bg-smsSky-50">
-            <td className="p-3 text-sm text-gray-700">John Doe</td>
-            <td className="p-3 text-sm text-gray-700">Mathematics</td>
-            <td className="p-3 text-sm text-gray-700"> </td>
-            <td className="p-3 text-sm text-gray-700">123-456-7890</td>
-            <td className="p-3 text-sm text-gray-700">Edit | Delete</td>
-          </tr>
-        </tbody>
+        <tbody>{data.map((item) => renderRow(item))}</tbody>
       </table>
     </div>
   );
