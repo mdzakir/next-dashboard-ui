@@ -1,3 +1,4 @@
+import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -41,6 +42,9 @@ const AnnouncementListPage = () => {
           {item.title}
         </td>
         <td className="p-3 text-sm text-gray-700 hidden md:table-cell">
+          {item.class}
+        </td>
+          <td className="p-3 text-sm text-gray-700 hidden md:table-cell">
           {item.date}
         </td>
         <td className="p-3 text-sm text-gray-700">
@@ -49,14 +53,10 @@ const AnnouncementListPage = () => {
               href={`/list/students/${item.id}`}
               className="text-smsBlue-500 hover:underline"
             >
-              <button className="w-7 h-7 items-center justify-center flex rounded-full bg-smsSky-200 hover:bg-smsSky-300">
-                <Image src="/edit.png" alt="edit" width={14} height={14} />
-              </button>
+              <FormModal table="announcement" type="update" />
             </Link>
             {role === "admin" && (
-              <button className="w-7 h-7 items-center justify-center flex rounded-full bg-smsPurple-2000">
-                <Image src="/delete.png" alt="edit" width={12} height={12} />
-              </button>
+              <FormModal table="announcement" type="delete" />
             )}
           </div>
         </td>
@@ -80,7 +80,7 @@ const AnnouncementListPage = () => {
             </button>
             {role === "admin" ? (
               <button className="text-xs flex items-center gap-2 w-8 h-8 justify-center rounded-full bg-smsYellow-200 hover:bg-smsYellow-300">
-                <Image src="/plus.png" alt="filter" width={14} height={14} />
+                <Image src="/create.png" alt="filter" width={14} height={14} />
               </button>
             ) : null}
           </div>

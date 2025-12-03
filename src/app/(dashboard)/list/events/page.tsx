@@ -1,3 +1,4 @@
+import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
@@ -51,34 +52,26 @@ const EventListPage = () => {
         <td className="flex items-center gap-4 p-3 text-sm text-gray-700">
           {item.title}
         </td>
-        <td className="p-3 text-sm text-gray-700">
-          {item.class}
-        </td>
-         <td className="p-3 text-sm text-gray-700 hidden md:table-cell">
+        <td className="p-3 text-sm text-gray-700">{item.class}</td>
+        <td className="p-3 text-sm text-gray-700 hidden md:table-cell">
           {item.date}
         </td>
-          <td className="p-3 text-sm text-gray-700 hidden md:table-cell">
+        <td className="p-3 text-sm text-gray-700 hidden md:table-cell">
           {item.startTime}
         </td>
         <td className="p-3 text-sm text-gray-700 hidden md:table-cell">
           {item.endTime}
         </td>
-       
+
         <td className="p-3 text-sm text-gray-700">
           <div className="flex items-center gap-2">
             <Link
               href={`/list/students/${item.id}`}
               className="text-smsBlue-500 hover:underline"
             >
-              <button className="w-7 h-7 items-center justify-center flex rounded-full bg-smsSky-200 hover:bg-smsSky-300">
-                <Image src="/edit.png" alt="edit" width={14} height={14} />
-              </button>
+              <FormModal table="event" type="update" />
             </Link>
-            {role === "admin" && (
-              <button className="w-7 h-7 items-center justify-center flex rounded-full bg-smsPurple-2000">
-                <Image src="/delete.png" alt="edit" width={12} height={12} />
-              </button>
-            )}
+            {role === "admin" && <FormModal table="event" type="delete" />}
           </div>
         </td>
       </tr>
@@ -88,9 +81,7 @@ const EventListPage = () => {
     <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
       {/* top */}
       <div className="flex items-center justify-between">
-        <h3 className="hidden md:block text-lg font-semibold">
-          All Results
-        </h3>
+        <h3 className="hidden md:block text-lg font-semibold">All Results</h3>
         {/* list */}
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch />
@@ -102,9 +93,7 @@ const EventListPage = () => {
               <Image src="/sort.png" alt="filter" width={14} height={14} />
             </button>
             {role === "admin" ? (
-              <button className="text-xs flex items-center gap-2 w-8 h-8 justify-center rounded-full bg-smsYellow-200 hover:bg-smsYellow-300">
-                <Image src="/plus.png" alt="filter" width={14} height={14} />
-              </button>
+              <FormModal table="event" type="create" />
             ) : null}
           </div>
         </div>
