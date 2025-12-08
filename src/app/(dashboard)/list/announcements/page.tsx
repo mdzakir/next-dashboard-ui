@@ -44,19 +44,16 @@ const AnnouncementListPage = () => {
         <td className="p-3 text-sm text-gray-700 hidden md:table-cell">
           {item.class}
         </td>
-          <td className="p-3 text-sm text-gray-700 hidden md:table-cell">
+        <td className="p-3 text-sm text-gray-700 hidden md:table-cell">
           {item.date}
         </td>
         <td className="p-3 text-sm text-gray-700">
           <div className="flex items-center gap-2">
-            <Link
-              href={`/list/students/${item.id}`}
-              className="text-smsBlue-500 hover:underline"
-            >
-              <FormModal table="announcement" type="update" />
-            </Link>
             {role === "admin" && (
-              <FormModal table="announcement" type="delete" />
+              <>
+                <FormModal table="announcement" type="update" id={item?.id} />
+                <FormModal table="announcement" type="delete" id={item?.id} />
+              </>
             )}
           </div>
         </td>
@@ -67,7 +64,9 @@ const AnnouncementListPage = () => {
     <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
       {/* top */}
       <div className="flex items-center justify-between">
-        <h3 className="hidden md:block text-lg font-semibold">All Announcements</h3>
+        <h3 className="hidden md:block text-lg font-semibold">
+          All Announcements
+        </h3>
         {/* list */}
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch />

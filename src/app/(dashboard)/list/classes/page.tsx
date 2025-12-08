@@ -60,14 +60,11 @@ const ClassesListPage = () => {
         </td>
         <td className="p-3 text-sm text-gray-700">
           <div className="flex items-center gap-2">
-            <Link
-              href={`/list/students/${item.id}`}
-              className="text-smsBlue-500 hover:underline"
-            >
-              <FormModal table="class" type="update" />
-            </Link>
             {role === "admin" && (
-              <FormModal table="class" type="delete" />
+              <>
+                <FormModal table="class" type="update" id={item?.id} />
+                <FormModal table="class" type="delete" id={item?.id} />
+              </>
             )}
           </div>
         </td>

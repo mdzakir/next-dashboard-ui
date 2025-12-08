@@ -58,14 +58,11 @@ const AssignmentListPage = () => {
         </td>
         <td className="p-3 text-sm text-gray-700">
           <div className="flex items-center gap-2">
-            <Link
-              href={`/list/students/${item.id}`}
-              className="text-smsBlue-500 hover:underline"
-            >
-              <FormModal table="assignment" type="update" />
-            </Link>
             {role === "admin" && (
-              <FormModal table="assignment" type="delete" />
+              <>
+                <FormModal table="assignment" type="update" id={item?.id} />
+                <FormModal table="assignment" type="delete" id={item?.id} />
+              </>
             )}
           </div>
         </td>
@@ -76,7 +73,9 @@ const AssignmentListPage = () => {
     <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
       {/* top */}
       <div className="flex items-center justify-between">
-        <h3 className="hidden md:block text-lg font-semibold">All Assignments</h3>
+        <h3 className="hidden md:block text-lg font-semibold">
+          All Assignments
+        </h3>
         {/* list */}
         <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
           <TableSearch />

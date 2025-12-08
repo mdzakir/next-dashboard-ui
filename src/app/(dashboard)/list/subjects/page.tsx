@@ -52,7 +52,7 @@ const SubjectsListPage = () => {
                 <Image src="/view.png" alt="edit" width={14} height={14} />
               </button>
             </Link>
-            {role === "admin" && <FormModal table="subject" type="delete" />}
+            {role === "admin" && <FormModal table="subject" type="delete" id={item?.id} />}
           </div>
         </td>
       </tr>

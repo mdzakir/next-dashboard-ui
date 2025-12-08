@@ -83,7 +83,7 @@ const ResultListPage = () => {
               <FormModal table="result" type="update" />
             </Link>
             {role === "admin" && (
-              <FormModal table="result" type="delete" />
+              <FormModal table="result" type="delete" id={item?.id} />
             )}
           </div>
         </td>

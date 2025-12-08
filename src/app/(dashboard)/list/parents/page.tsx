@@ -62,13 +62,12 @@ const ParentsListPage = () => {
         </td>
         <td className="p-3 text-sm text-gray-700">
           <div className="flex items-center gap-2">
-            <Link
-              href={`/list/students/${item.id}`}
-              className="text-smsBlue-500 hover:underline"
-            >
-              <FormModal table="parent" type="update" />
-            </Link>
-            {role === "admin" && <FormModal table="parent" type="delete" />}
+            {role === "admin" && (
+              <>
+                <FormModal table="parent" type="update" id={item?.id} />
+                <FormModal table="parent" type="delete" id={item?.id} />
+              </>
+            )}
           </div>
         </td>
       </tr>

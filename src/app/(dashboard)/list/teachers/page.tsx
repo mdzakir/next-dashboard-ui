@@ -89,7 +89,7 @@ const TeachersListPage = () => {
                 <Image src="/view.png" alt="edit" width={14} height={14} />
               </button>
             </Link>
-            {role === "admin" && <FormModal type="delete" table="teacher" />}
+            {role === "admin" && <FormModal type="delete" table="teacher" id={item?.id} />}
           </div>
         </td>
       </tr>

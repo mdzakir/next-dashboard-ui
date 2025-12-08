@@ -85,7 +85,7 @@ const StudentsListPage = () => {
                 <Image src="/view.png" alt="edit" width={14} height={14} />
               </button>
             </Link>
-            {role === "admin" && <FormModal table="student" type="delete" />}
+            {role === "admin" && <FormModal table="student" type="delete" id={item?.id} />}
           </div>
         </td>
       </tr>
@@ -106,10 +106,9 @@ const StudentsListPage = () => {
             <button className="text-xs flex items-center gap-2 w-8 h-8 justify-center rounded-full bg-smsYellow-200 hover:bg-smsYellow-300">
               <Image src="/sort.png" alt="filter" width={14} height={14} />
             </button>
+           
             {role === "admin" ? (
-              <button className="text-xs flex items-center gap-2 w-8 h-8 justify-center rounded-full bg-smsYellow-200 hover:bg-smsYellow-300">
-                <Image src="/create.png" alt="filter" width={14} height={14} />
-              </button>
+              <FormModal type="create" table="student" />
             ) : null}
           </div>
         </div>

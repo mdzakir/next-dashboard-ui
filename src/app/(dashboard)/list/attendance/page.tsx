@@ -46,14 +46,11 @@ const AttendanceListPage = () => {
         </td>
         <td className="p-3 text-sm text-gray-700">
           <div className="flex items-center gap-2">
-            <Link
-              href={`/list/students/${item.id}`}
-              className="text-smsBlue-500 hover:underline"
-            >
-              <FormModal table="attendance" type="update" />
-            </Link>
             {role === "admin" && (
-              <FormModal table="attendance" type="delete" />
+              <>
+                <FormModal table="attendance" type="update" id={item?.id} />
+                <FormModal table="attendance" type="delete" id={item?.id} />
+              </>
             )}
           </div>
         </td>
